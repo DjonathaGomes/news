@@ -1,13 +1,13 @@
 # App-News
 Journalistic demo application - app O Globo demo
 
-#### API
+### API
 https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/capa.jsonv
 
-#### Used
+### Used
 Retrofit 2 | Recyclerview | Glide
 
-#### Retrofit
+### Retrofit
 public class Retrofit {
     private static final String URL_BASE = "https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/";
     private static NewsService newsService;
@@ -36,13 +36,13 @@ public class Retrofit {
     }
 }
 
-#### Service
+### Service
 public interface NewsService {
     @GET("capa.json")
     Call <List<ListNewsVO>> allNews();
 }
     
-#### Object
+### Object
 public class NewsVO {
     private final List<String> autores;
     private final Boolean informePublicitario;
@@ -77,7 +77,7 @@ public class ImgVO {
     private String url;
 }
 
-#### RecyclerView
+### RecyclerView
 public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapter.MyViewHolder> {
     private Context context;
     private List<NewsVO> list;
@@ -151,7 +151,7 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
     }
 }
     
-#### Activity
+### Activity
 
 public class NewsActivity extends AppCompatActivity {
     private ImageView imgNews, btnBack;
