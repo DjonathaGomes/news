@@ -1,5 +1,5 @@
 # App-News
-Journalistic demo application [ aplicativo de demonstração jornalístico ]
+Journalistic demo application - app O Globo demo
 
 #### API
 https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/capa.jsonv
@@ -79,7 +79,6 @@ public class ImgVO {
 
 #### RecyclerView
 public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapter.MyViewHolder> {
-
     private Context context;
     private List<NewsVO> list;
     private RecyclerViewClickListener listener;
@@ -323,6 +322,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         finish();
         super.onStop();
-}
+    }
 }
 
