@@ -22,7 +22,7 @@ public class NewsVO {
     private final Boolean informePublicitario;
     private final String subTitulo;
     private final String texto;
-    private final String[] videos;
+    private final List<String> videos;
     private final String atualizadoEm;
     private final int id;
     private final String publicadoEm;
@@ -34,7 +34,7 @@ public class NewsVO {
     private final List<ImgVO> imagens;
 
     public NewsVO(List<String> autores, Boolean informePublicitario,
-                  String subTitulo, String texto, String[] videos,
+                  String subTitulo, String texto, List<String> videos,
                   String atualizadoEm, int id, String publicadoEm,
                   SectionVO section, String tipo, String titulo,
                   String url, String urlOriginal, List<ImgVO> imagens) {
@@ -70,7 +70,7 @@ public class NewsVO {
         return texto;
     }
 
-    public String[] getVideos() {
+    public List<String> getVideos() {
         return videos;
     }
 

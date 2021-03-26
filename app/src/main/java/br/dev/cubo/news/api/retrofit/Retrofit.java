@@ -22,19 +22,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 //CONNECTION CLASS | USING RETROFIT
 public class Retrofit {
 
+    private static final String URL_BASE = "https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/";
     private static NewsService newsService;
 
     public static NewsService getInstance() {
         if (newsService == null) {
 
-            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-            OkHttpClient client = new OkHttpClient.Builder()
-                    .addInterceptor(logging)
-                    .build();
+            OkHttpClient client = configuraClient();
 
             retrofit2.Retrofit retrofit = new retrofit2.Retrofit.Builder()
-                    .baseUrl("https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/")
+                    .baseUrl(URL_BASE)
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
@@ -43,6 +40,14 @@ public class Retrofit {
         }
 
         return newsService;
+    }
+
+    private static OkHttpClient configuraClient() {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        return new OkHttpClient.Builder()
+                .addInterceptor(logging)
+                .build();
     }
 
 }
