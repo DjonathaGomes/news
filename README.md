@@ -1,15 +1,15 @@
 # App-News
 Journalistic demo application [ aplicativo de demonstração jornalístico ]
 
-#####API
+#### API
 https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/capa.jsonv
 
-#####Use
+#### Use
 Retrofit 2
 Recyclerview
 Glide
 
-#####Retrofit
+#### Retrofit
 public class Retrofit {
 
     private static final String URL_BASE = "https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/";
@@ -42,7 +42,7 @@ public class Retrofit {
 
 }
 
-#####Service
+#### Service
 public interface NewsService {
 
     @GET("capa.json")
