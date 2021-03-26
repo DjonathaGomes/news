@@ -12,6 +12,7 @@ public class Retrofit {
     private static final String URL_BASE = "https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/";
     private static NewsService newsService;
     public static NewsService getInstance() {
+    
         if (newsService == null) {
             OkHttpClient client = configuraClient();
             retrofit2.Retrofit retrofit = new retrofit2.Retrofit.Builder()
@@ -21,8 +22,11 @@ public class Retrofit {
                     .build();
             newsService = retrofit.create(NewsService.class);
         }
+        
         return newsService;
+        
     }
+    
     private static OkHttpClient configuraClient() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -75,28 +79,35 @@ public class ImgVO {
 
 #### RecyclerView
 public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapter.MyViewHolder> {
+
     private Context context;
     private List<NewsVO> list;
     private RecyclerViewClickListener listener;
     public NewsRecyclerAdapter(Context context, List<NewsVO> list, RecyclerViewClickListener listener) {
+    
         this.context = context;
         this.list = list;
         this.listener = listener;
     }
+    
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    
         View v;
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         v =layoutInflater.inflate(R.layout.item_list_home, parent, false);
         return new NewsRecyclerAdapter.MyViewHolder(v);
     }
+    
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    
         //POPULATING ATTRIBUTES LIST
         holder.title.setText(list.get(position).getTitulo());
         holder.date.setText(list.get(position).getAtualizadoEm());
+        
         //ERROR TREATMENT AUTHORS
         List<String> strings = list.get(position).getAutores();
         if (strings != null && !strings.isEmpty()){
@@ -104,6 +115,7 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
         }else {
             holder.origin.setText("desconhecido");
         }
+        
         //ERROR TREATMENT IMAGES
         List<ImgVO> imgVOList = list.get(position).getImagens();
         if (imgVOList != null && !imgVOList.isEmpty()){
@@ -112,12 +124,15 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
             holder.imgList.setImageResource(R.drawable.ic_notfound);
         }
     }
+    
     @Override
     public int getItemCount() { return list.size(); }
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    
         TextView origin, title, date;
         ImageView imgList;
         public MyViewHolder(@NonNull View itemView) {
+        
             super(itemView);
             origin = itemView.findViewById(R.id.origin);
             title = itemView.findViewById(R.id.title);
@@ -125,11 +140,13 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
             imgList = itemView.findViewById(R.id.imgList);
             itemView.setOnClickListener(this);
         }
+        
         @Override
         public void onClick(View v) {
             listener.onClick(v, getAdapterPosition());
         }
     }
+    
     public interface RecyclerViewClickListener{
         void onClick(View v, int position);
     }
@@ -306,6 +323,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         finish();
         super.onStop();
-    }
+}
 }
 
