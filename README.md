@@ -5,7 +5,7 @@ Journalistic demo application - app O Globo demo
 https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/capa.jsonv
 
 ### Used
-Retrofit 2 | Recyclerview | Glide
+Retrofit | Recyclerview | Glide
 
 ### Retrofit
 public class Retrofit {
