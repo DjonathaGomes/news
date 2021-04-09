@@ -1,4 +1,4 @@
-# app-News
+# App-News
 Journalistic demo application - app O Globo demo
 
 ### API
