@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".presentation.activity.MenuActivity">>
+
+    <TextView
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:paddingHorizontal="50dp"
+        android:gravity="center"
+        android:text="Home"
+        android:textSize="16sp"
+        android:textColor="@color/prime_light"/>
+
+    <TextView
+        android:id="@+id/negocio"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:paddingHorizontal="50dp"
+        android:gravity="center"
+        android:text="@string/negocios"
+        android:layout_marginVertical="20dp"
+        android:textSize="16sp"
+        android:textColor="@color/prime_light"/>
+
+    <TextView
+        android:id="@+id/exercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:paddingHorizontal="50dp"
+        android:gravity="center"
+        android:text="@string/exercicio"
+        android:textSize="16sp"
+        android:textColor="@color/prime_light"/>
+
+    <TextView
+        android:id="@+id/lazer"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:paddingHorizontal="50dp"
+        android:gravity="center"
+        android:text="@string/lazer"
+        android:layout_marginVertical="20dp"
+        android:textSize="16sp"
+        android:textColor="@color/prime_light"/>
+
+    <TextView
+        android:id="@+id/saude"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:paddingHorizontal="50dp"
+        android:gravity="center"
+        android:text="@string/saude"
+        android:textSize="16sp"
+        android:textColor="@color/prime_light"/>
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_circle_out"
+        android:rotation="45"
+        android:textSize="16sp"
+        android:textColor="@color/prime_light"/>
+
+</LinearLayout>
+
+</layout>

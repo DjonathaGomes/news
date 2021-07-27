@@ -1,6 +1,15 @@
 <resources>
-    <string name="app_name">O Globo</string>
+    <string name="app_name">The News</string>
     <string name="title">A origem da notícIa está aqui</string>
     <string name="origem">origem</string>
     <string name="data">12/05/2019</string>
+    <string name="negocios">Negócios</string>
+    <string name="saude">Saúde</string>
+    <string name="lazer">Lazer</string>
+    <string name="exercicio">Exercício</string>
+    <string name="alimentacao">Alimentação</string>
+    <string name="noticias">Notícias</string>
+    <string name="the_news">the news</string>
+    <string name="error">Ocorreu um erro!<br />Tente novamente mais tarde</string>
+    <string name="error_news">Ocorreu um erro!<br />As notícias não foram carregada</string>
 </resources>

@@ -1,422 +1,469 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- HEADER -->
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:paddingHorizontal="20dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/ic_menu"
-            android:backgroundTint="@color/prime"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:fontFamily="sans-serif-black"
-            android:textStyle="bold"
-            android:text="O Globo"
-            android:textSize="20sp"
-            android:paddingRight="35dp"
-            android:textAllCaps="true"
-            android:textColor="@color/prime"/>
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            tools:context=".presentation.activity.MainActivity">
 
-            <!-- CARDS -->
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bkg_gradient_card_home"
-                android:orientation="vertical">
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:scrollbars="horizontal"
-                    android:scrollbarThumbHorizontal="@android:color/transparent">
+                <ImageView
+                    android:id="@+id/open_menu"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/ic_menu"
+                    android:backgroundTint="@color/prime"
+                    tools:ignore="UnusedAttribute" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <!-- CARDS ONE -->
-                        <LinearLayout
-                            android:layout_width="300dp"
-                            android:layout_height="250dp"
-                            android:layout_marginLeft="20dp"
-                            android:elevation="50dp"
-                            android:foreground="?selectableItemBackground"
-                            android:clickable="true"
-                            android:background="@drawable/bkg_item_card_home">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/business"
-                                    android:alpha="0.5"
-                                    android:scaleType="centerCrop"/>
-
-                               <androidx.constraintlayout.widget.ConstraintLayout
-                                   android:layout_width="match_parent"
-                                   android:layout_height="match_parent">
-
-                                   <ImageView
-                                       android:id="@+id/imageView2"
-                                       android:layout_width="30dp"
-                                       android:layout_height="30dp"
-                                       android:layout_marginLeft="30dp"
-                                       android:layout_marginBottom="50dp"
-                                       android:src="@drawable/ic_business"
-                                       app:layout_constraintBottom_toBottomOf="parent"
-                                       app:layout_constraintStart_toStartOf="parent" />
-
-                                   <TextView
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="wrap_content"
-                                       android:fontFamily="sans-serif-black"
-                                       android:text="Negócios"
-                                       android:paddingTop="3dp"
-                                       android:textColor="@color/prime"
-                                       android:textSize="18sp"
-                                       android:textStyle="bold"
-                                       app:layout_constraintStart_toStartOf="@+id/imageView2"
-                                       app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-                               </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                        <!-- CARDS TWO-->
-                        <LinearLayout
-                            android:layout_width="300dp"
-                            android:layout_height="250dp"
-                            android:layout_marginLeft="20dp"
-                            android:elevation="50dp"
-                            android:foreground="?selectableItemBackground"
-                            android:clickable="true"
-                            android:background="@drawable/bkg_item_card_home">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/health"
-                                    android:alpha="0.5"
-                                    android:scaleType="centerCrop"/>
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/imageView3"
-                                        android:layout_width="25dp"
-                                        android:layout_height="25dp"
-                                        android:layout_marginLeft="30dp"
-                                        android:layout_marginBottom="50dp"
-                                        android:src="@drawable/ic_health"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="sans-serif-black"
-                                        android:text="Saúde"
-                                        android:paddingTop="3dp"
-                                        android:textColor="@color/prime"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold"
-                                        app:layout_constraintStart_toStartOf="@+id/imageView3"
-                                        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                        <!-- CARDS THREE -->
-                        <LinearLayout
-                            android:layout_width="300dp"
-                            android:layout_height="250dp"
-                            android:layout_marginLeft="20dp"
-                            android:elevation="50dp"
-                            android:foreground="?selectableItemBackground"
-                            android:clickable="true"
-                            android:background="@drawable/bkg_item_card_home">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/chill"
-                                    android:alpha="0.5"
-                                    android:scaleType="centerCrop"/>
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/imageView4"
-                                        android:layout_width="35dp"
-                                        android:layout_height="35dp"
-                                        android:layout_marginLeft="30dp"
-                                        android:layout_marginBottom="50dp"
-                                        android:src="@drawable/ic_chill"
-                                        android:scaleType="fitCenter"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="sans-serif-black"
-                                        android:text="Lazer"
-                                        android:textColor="@color/prime"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold"
-                                        app:layout_constraintStart_toStartOf="@+id/imageView4"
-                                        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                        <!-- CARDS FOUR -->
-                        <LinearLayout
-                            android:layout_width="300dp"
-                            android:layout_height="250dp"
-                            android:layout_marginLeft="20dp"
-                            android:elevation="50dp"
-                            android:foreground="?selectableItemBackground"
-                            android:clickable="true"
-                            android:background="@drawable/bkg_item_card_home">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/exercice"
-                                    android:alpha="0.5"
-                                    android:scaleType="centerCrop"/>
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/imageView5"
-                                        android:layout_width="30dp"
-                                        android:layout_height="30dp"
-                                        android:layout_marginLeft="30dp"
-                                        android:layout_marginBottom="50dp"
-                                        android:src="@drawable/ic_exercice"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="sans-serif-black"
-                                        android:text="Exercício"
-                                        android:paddingTop="3dp"
-                                        android:textColor="@color/prime"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold"
-                                        app:layout_constraintStart_toStartOf="@+id/imageView5"
-                                        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                        <!-- CARDS FIVE -->
-                        <LinearLayout
-                            android:layout_width="300dp"
-                            android:layout_height="250dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
-                            android:elevation="50dp"
-                            android:foreground="?selectableItemBackground"
-                            android:clickable="true"
-                            android:background="@drawable/bkg_item_card_home">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                app:cardCornerRadius="10dp"
-                                android:elevation="0dp">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/food"
-                                    android:alpha="0.5"
-                                    android:scaleType="centerCrop"/>
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/imageView6"
-                                        android:layout_width="30dp"
-                                        android:layout_height="30dp"
-                                        android:layout_marginLeft="30dp"
-                                        android:layout_marginBottom="50dp"
-                                        android:src="@drawable/ic_food"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="sans-serif-black"
-                                        android:text="Alimentação"
-                                        android:paddingTop="3dp"
-                                        android:textColor="@color/prime"
-                                        android:textSize="18sp"
-                                        android:textStyle="bold"
-                                        app:layout_constraintStart_toStartOf="@+id/imageView6"
-                                        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                </HorizontalScrollView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:background="@drawable/bkg_top_recyclerview"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:paddingEnd="35dp"
+                    android:paddingRight="35dp"
+                    android:text="@string/the_news"
+                    android:textAllCaps="true"
+                    android:textColor="@color/prime"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlSymmetry" />
 
             </LinearLayout>
 
-            <!-- BASE RECYCLERVIEW -->
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-                <!-- TITLE RECYCLERVIEW -->
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:orientation="horizontal"
-                    android:paddingBottom="25dp">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_marginTop="3dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_news" />
-
+                    <!-- CARDS -->
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingLeft="5dp">
+                        android:background="@drawable/bkg_gradient_card_home"
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Notícias"
-                            android:textColor="@color/prime"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="350dp"
+                            android:overScrollMode="never"
+                            android:scrollbarThumbHorizontal="@android:color/transparent"
+                            android:scrollbars="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <!-- CARDS ONE -->
+                                <LinearLayout
+                                    android:layout_width="300dp"
+                                    android:layout_height="250dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="@drawable/bkg_item_card_home"
+                                    android:clickable="true"
+                                    android:elevation="50dp"
+                                    android:foreground="?selectableItemBackground"
+                                    tools:ignore="UnusedAttribute">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:elevation="0dp"
+                                        app:cardCornerRadius="10dp">
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:alpha="0.5"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/business" />
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <ImageView
+                                                android:id="@+id/imageView2"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginStart="30dp"
+                                                android:layout_marginLeft="30dp"
+                                                android:layout_marginBottom="50dp"
+                                                android:src="@drawable/ic_business"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="sans-serif-black"
+                                                android:paddingTop="3dp"
+                                                android:text="@string/negocios"
+                                                android:textColor="@color/prime"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold"
+                                                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                                                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </androidx.cardview.widget.CardView>
+
+                                </LinearLayout>
+
+                                <!-- CARDS TWO-->
+                                <LinearLayout
+                                    android:layout_width="300dp"
+                                    android:layout_height="250dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="@drawable/bkg_item_card_home"
+                                    android:clickable="true"
+                                    android:elevation="50dp"
+                                    android:foreground="?selectableItemBackground"
+                                    tools:ignore="UnusedAttribute">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:elevation="0dp"
+                                        app:cardCornerRadius="10dp">
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:alpha="0.5"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/health" />
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <ImageView
+                                                android:id="@+id/imageView3"
+                                                android:layout_width="25dp"
+                                                android:layout_height="25dp"
+                                                android:layout_marginStart="30dp"
+                                                android:layout_marginLeft="30dp"
+                                                android:layout_marginBottom="50dp"
+                                                android:src="@drawable/ic_health"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="sans-serif-black"
+                                                android:paddingTop="3dp"
+                                                android:text="@string/saude"
+                                                android:textColor="@color/prime"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold"
+                                                app:layout_constraintStart_toStartOf="@+id/imageView3"
+                                                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </androidx.cardview.widget.CardView>
+
+                                </LinearLayout>
+
+                                <!-- CARDS THREE -->
+                                <LinearLayout
+                                    android:layout_width="300dp"
+                                    android:layout_height="250dp"
+                                    android:layout_marginStart="20dp"
+                                    android:background="@drawable/bkg_item_card_home"
+                                    android:clickable="true"
+                                    android:elevation="50dp"
+                                    android:foreground="?selectableItemBackground"
+                                    tools:ignore="UnusedAttribute">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:elevation="0dp"
+                                        app:cardCornerRadius="10dp">
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:alpha="0.5"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/chill" />
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <ImageView
+                                                android:id="@+id/imageView4"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:layout_marginStart="30dp"
+                                                android:layout_marginBottom="50dp"
+                                                android:scaleType="fitCenter"
+                                                android:src="@drawable/ic_chill"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="sans-serif-black"
+                                                android:text="@string/lazer"
+                                                android:textColor="@color/prime"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold"
+                                                app:layout_constraintStart_toStartOf="@+id/imageView4"
+                                                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </androidx.cardview.widget.CardView>
+
+                                </LinearLayout>
+
+                                <!-- CARDS FOUR -->
+                                <LinearLayout
+                                    android:layout_width="300dp"
+                                    android:layout_height="250dp"
+                                    android:layout_marginStart="20dp"
+                                    android:background="@drawable/bkg_item_card_home"
+                                    android:clickable="true"
+                                    android:elevation="50dp"
+                                    android:foreground="?selectableItemBackground"
+                                    tools:ignore="UnusedAttribute">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:elevation="0dp"
+                                        app:cardCornerRadius="10dp">
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:alpha="0.5"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/exercice" />
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <ImageView
+                                                android:id="@+id/imageView5"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginStart="30dp"
+                                                android:layout_marginBottom="50dp"
+                                                android:src="@drawable/ic_exercice"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="sans-serif-black"
+                                                android:paddingTop="3dp"
+                                                android:text="@string/exercicio"
+                                                android:textColor="@color/prime"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold"
+                                                app:layout_constraintStart_toStartOf="@+id/imageView5"
+                                                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </androidx.cardview.widget.CardView>
+
+                                </LinearLayout>
+
+                                <!-- CARDS FIVE -->
+                                <LinearLayout
+                                    android:layout_width="300dp"
+                                    android:layout_height="250dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:background="@drawable/bkg_item_card_home"
+                                    android:clickable="true"
+                                    android:elevation="50dp"
+                                    android:foreground="?selectableItemBackground"
+                                    tools:ignore="UnusedAttribute">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:elevation="0dp"
+                                        app:cardCornerRadius="10dp">
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:alpha="0.5"
+                                            android:scaleType="centerCrop"
+                                            android:src="@drawable/food" />
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+                                            <ImageView
+                                                android:id="@+id/imageView6"
+                                                android:layout_width="30dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginStart="30dp"
+                                                android:layout_marginBottom="50dp"
+                                                android:src="@drawable/ic_food"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="sans-serif-black"
+                                                android:paddingTop="3dp"
+                                                android:text="@string/alimentacao"
+                                                android:textColor="@color/prime"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold"
+                                                app:layout_constraintStart_toStartOf="@+id/imageView6"
+                                                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    </androidx.cardview.widget.CardView>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
 
                         <LinearLayout
-                            android:layout_width="20dp"
-                            android:layout_height="3dp"
-                            android:background="@drawable/line_titles"
-                            android:backgroundTint="@color/prime" />
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:background="@drawable/bkg_top_recyclerview" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="25dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="3dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_news" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingLeft="5dp"
+                                tools:ignore="RtlSymmetry">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/noticias"
+                                    android:textColor="@color/prime"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="20dp"
+                                    android:layout_height="3dp"
+                                    android:background="@drawable/line_titles"
+                                    android:backgroundTint="@color/prime"
+                                    tools:ignore="UnusedAttribute" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/error"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_erro" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center"
+                                android:text="@string/error_news" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_news"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:overScrollMode="never"
+                            android:visibility="visible"
+                            tools:listitem="@layout/item_list_news" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-                <!-- RECYCLERVIEW -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/list_news_recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:listitem="@layout/item_list_home" />
+            </ScrollView>
 
-            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </LinearLayout>
 
-        </LinearLayout>
-
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
